@@ -1,6 +1,6 @@
 public class Singleton {
 
-    private static volatile Singleton singleton;
+    private static Singleton singleton;
 
     private Singleton() {
         System.out.println("Instance created");
@@ -9,10 +9,8 @@ public class Singleton {
     public static synchronized Singleton getInstance() {
         if (singleton == null) {
             singleton = new Singleton();
-            return singleton;
-        } else {
-            return singleton;
         }
+        return singleton;
     }
 
 }
